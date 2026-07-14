@@ -2,11 +2,12 @@
 
 > Production-style three-tier application deployed on Azure Kubernetes Service (AKS), fully automated with Azure DevOps CI/CD — Docker build, Azure Container Registry, AKS release, and Azure SQL Database integration.
 
-**Author:** Muhammad Saad Hussain  
-**GitHub:** [@saadhussain07](https://github.com/saadhussain07)  
-**LinkedIn:** [muhammad-saad-hussain](https://www.linkedin.com/in/muhammad-saad-hussain-28435b3a2/)  
-**Research:** IEEE TNSM — Multi-Agent LLM AIOps Framework  
-**Application source:** [piyushsachdeva/MyHealthClinic-AKS](https://github.com/piyushsachdeva/MyHealthClinic-AKS) — this repo covers my infrastructure, pipeline, and deployment work on top of it.
+**Author:** Muhammad Saad Hussain
+**GitHub:** [@saadhussain07](https://github.com/saadhussain07)
+**LinkedIn:** [muhammad-saad-hussain](https://www.linkedin.com/in/muhammad-saad-hussain-28435b3a2/)
+**Research:** IEEE TNSM — Multi-Agent LLM AIOps Framework
+**Application source:** [piyushsachdeva/MyHealthClinic-AKS](https://github.com/piyushsachdeva/MyHealthClinic-AKS) — this repo covers my infra, pipeline, and deployment work on top of it
+
 ---
 
 ## 🏗️ Architecture
