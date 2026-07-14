@@ -12,7 +12,7 @@
 
 ## 🏗️ Architecture
 
-![Azure AKS three-tier architecture](screenshots/architecture-diagram.svg)
+![Azure AKS three-tier architecture](diagrams/architecture-diagram.svg)
 
 **Flow:** Azure Repos → Azure Pipelines (build) → Azure Container Registry → AKS Deployment → Azure Release Pipeline → Public LoadBalancer
 

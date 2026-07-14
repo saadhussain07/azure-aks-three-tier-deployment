@@ -1,0 +1,76 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  acrName: 'day11demoacr'
+  imageName: 'myhealth.web'
+  buildId: '$(Build.BuildId)'
+
+stages:
+  - stage: Build
+    displayName: 'Build and push image'
+    jobs:
+      - job: BuildAndPush
+        steps:
+          - task: replacetokens@5
+            displayName: 'Replace tokens'
+            inputs:
+              targetFiles: |
+                **/appsettings.json
+                **/mhc-aks.yaml
+              tokenPrefix: '#{'
+              tokenSuffix: '}#'
+
+          - task: DockerCompose@0
+            displayName: 'Build services with Docker Compose'
+            inputs:
+              action: 'Run a Docker Compose command'
+              dockerComposeFile: 'docker-compose.ci.build.yml'
+              dockerComposeCommand: 'build'
+
+          - task: Docker@2
+            displayName: 'Build image'
+            inputs:
+              command: 'build'
+              repository: '$(imageName)'
+              dockerfile: '**/Dockerfile'
+              tags: '$(buildId)'
+
+          - task: Docker@2
+            displayName: 'Push image to ACR'
+            inputs:
+              command: 'push'
+              containerRegistry: 'acr-service-connection'
+              repository: '$(imageName)'
+              tags: '$(buildId)'
+
+          - task: PublishBuildArtifacts@1
+            displayName: 'Publish deployment artifacts'
+            inputs:
+              PathtoPublish: 'manifests'
+              ArtifactName: '_3-Tier-app on AKS'
+              publishLocation: 'Container'
+
+  - stage: Release
+    displayName: 'Deploy to AKS'
+    dependsOn: Build
+    jobs:
+      - deployment: DeployToAKS
+        environment: 'dev'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: KubernetesManifest@1
+                  displayName: 'Set image on deployment'
+                  inputs:
+                    action: 'deploy'
+                    kubernetesServiceConnection: 'aks-service-connection'
+                    namespace: 'default'
+                    manifests: 'manifests/mhc-aks.yaml'
+                    containers: '$(acrName).azurecr.io/$(imageName):$(buildId)'
