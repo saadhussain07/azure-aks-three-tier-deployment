@@ -1,0 +1,57 @@
+<svg width="1100" height="900" viewBox="0 0 1100 900" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="#6b7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+
+<!-- Azure DevOps Pipeline -->
+<rect x="382" y="65" width="340" height="80" rx="12" fill="#4a4a4a"/>
+<text x="552" y="102" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="700">Azure DevOps pipeline</text>
+<text x="552" y="128" text-anchor="middle" fill="#cfcfcf" font-size="16">Build &amp; push images</text>
+
+<line x1="552" y1="145" x2="552" y2="205" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Container Registry -->
+<rect x="382" y="210" width="340" height="80" rx="12" fill="#7a3418"/>
+<text x="552" y="247" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="700">Container registry</text>
+<text x="552" y="273" text-anchor="middle" fill="#e8c4b0" font-size="16">day11demoacr.azurecr.io</text>
+
+<line x1="552" y1="290" x2="552" y2="345" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- AKS Cluster -->
+<rect x="230" y="350" width="600" height="290" rx="20" fill="#0b6e5f"/>
+<text x="530" y="390" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="700">Azure Kubernetes Service</text>
+<text x="530" y="416" text-anchor="middle" fill="#8fd6c6" font-size="16">AKS cluster</text>
+
+<!-- mhc-front -->
+<rect x="270" y="440" width="245" height="160" rx="12" fill="#1f5f8b"/>
+<text x="392" y="500" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">mhc-front</text>
+<text x="392" y="528" text-anchor="middle" fill="#bcdcf0" font-size="15">ASP.NET frontend</text>
+
+<!-- mhc-back -->
+<rect x="545" y="440" width="245" height="160" rx="12" fill="#1f5f8b"/>
+<text x="667" y="500" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">mhc-back</text>
+<text x="667" y="528" text-anchor="middle" fill="#bcdcf0" font-size="15">Redis cache</text>
+
+<text x="530" y="514" text-anchor="middle" fill="#dfe3e6" font-size="14">cache calls</text>
+<line x1="515" y1="520" x2="545" y2="520" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Down to SQL and LB -->
+<line x1="392" y1="640" x2="392" y2="710" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="667" y1="640" x2="667" y2="710" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Azure SQL Database -->
+<rect x="245" y="715" width="295" height="80" rx="12" fill="#3c2f78"/>
+<text x="392" y="752" text-anchor="middle" fill="#ffffff" font-size="21" font-weight="700">Azure SQL Database</text>
+<text x="392" y="778" text-anchor="middle" fill="#c9c2e8" font-size="16">mhcdb</text>
+
+<!-- Load Balancer -->
+<rect x="545" y="715" width="245" height="80" rx="12" fill="#4a4a4a"/>
+<text x="667" y="752" text-anchor="middle" fill="#ffffff" font-size="21" font-weight="700">Load balancer</text>
+<text x="667" y="778" text-anchor="middle" fill="#cfcfcf" font-size="16">Public IP</text>
+
+<line x1="790" y1="755" x2="850" y2="755" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="860" y="761" fill="#9ca3af" font-size="18">Internet</text>
+
+</svg>
